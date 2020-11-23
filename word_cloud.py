@@ -29,7 +29,7 @@ def get_freq(lst):
 
 
 text_path = "theraven.txt"
-font_path = "/System/Library/Fonts/HelveticaNeue.ttc"
+font = "/System/Library/Fonts/HelveticaNeue.ttc"
 
 wrds = get_wrds(text_path)
 
@@ -37,6 +37,6 @@ words_frequency = get_freq(wrds)
 
 file_name = text_path.split(".txt")[0]
 
-cloud = wordcloud.WordCloud(font_path=font_path, width=800, height=400, margin=5, font_step=5, contour_width=100, background_color='black', colormap="plasma")
+cloud = wordcloud.WordCloud(font_path=font, width=800, height=400, margin=5, font_step=5, contour_width=100, background_color='black', colormap="plasma")
 cloud.generate_from_frequencies(words_frequency)
 cloud.to_file(f"img/{file_name}.jpg")
